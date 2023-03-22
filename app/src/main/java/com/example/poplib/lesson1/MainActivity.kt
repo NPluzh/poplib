@@ -1,12 +1,11 @@
 package com.example.poplib.lesson1
 
 import android.os.Bundle
-import com.example.poplib.R
 import com.example.poplib.databinding.ActivityMainBinding
 import moxy.MvpAppCompatActivity
 import moxy.ktx.moxyPresenter
 
-class MainActivity : MvpAppCompatActivity(R.layout.activity_main), Contract.MainView{
+class MainActivity : MvpAppCompatActivity(), Contract.MainView{
     private lateinit var binding: ActivityMainBinding
     private val presenter by moxyPresenter { PresenterImpl() }
 
