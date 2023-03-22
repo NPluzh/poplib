@@ -14,7 +14,7 @@
         android:theme="@style/Theme.Poplib"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity"
+            android:name=".lesson1.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

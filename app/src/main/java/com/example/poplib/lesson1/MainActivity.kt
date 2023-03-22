@@ -1,18 +1,19 @@
-package com.example.poplib
+package com.example.poplib.lesson1
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.poplib.R
 import com.example.poplib.databinding.ActivityMainBinding
+import moxy.MvpAppCompatActivity
+import moxy.ktx.moxyPresenter
 
-class MainActivity : AppCompatActivity(), Contract.MainView{
+class MainActivity : MvpAppCompatActivity(R.layout.activity_main), Contract.MainView{
     private lateinit var binding: ActivityMainBinding
-    private val presenter = PresenterImpl()
+    private val presenter by moxyPresenter { PresenterImpl() }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        presenter.onAttach(this)
         setOnClickListeners()
     }
 
@@ -21,6 +22,8 @@ class MainActivity : AppCompatActivity(), Contract.MainView{
             btnCounter1.setOnClickListener{presenter.clickButton1()}
             btnCounter2.setOnClickListener{presenter.clickButton2()}
             btnCounter3.setOnClickListener{presenter.clickButton3()}
+
+
         }
     }
 

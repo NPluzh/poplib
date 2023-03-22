@@ -1,4 +1,4 @@
-package com.example.poplib
+package com.example.poplib.lesson1
 
 class CountersModel {
     private val counters = mutableListOf(0, 0, 0)
