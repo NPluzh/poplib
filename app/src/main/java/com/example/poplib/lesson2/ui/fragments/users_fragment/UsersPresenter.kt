@@ -4,6 +4,7 @@ import com.example.poplib.lesson2.model.data.GithubUser
 import com.example.poplib.lesson2.model.data.GithubUsersRepo
 import com.example.poplib.lesson2.ui.recycler_users.IUserListPresenter
 import com.example.poplib.lesson2.ui.recycler_users.UserItemView
+import com.example.poplib.lesson2.ui.screens.AndroidScreens
 import com.github.terrakok.cicerone.Router
 import moxy.MvpPresenter
 
@@ -20,13 +21,15 @@ class UsersPresenter(val usersRepo: GithubUsersRepo, val router: Router) : MvpPr
     }
 
     val usersListPresenter = UsersListPresenter()
+    val AS = AndroidScreens()
 
     override fun onFirstViewAttach() {
         super.onFirstViewAttach()
         viewState.init()
         loadData()
         usersListPresenter.itemClickListener = { itemView ->
-        //TODO: переход на экран пользователя c помощью router.navigateTo
+            val user = usersListPresenter.users[itemView.pos]
+            router.navigateTo(AS.user(user))
         }
     }
     fun loadData() {
