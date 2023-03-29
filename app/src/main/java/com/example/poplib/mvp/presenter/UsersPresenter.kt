@@ -1,10 +1,11 @@
-package com.example.poplib.lesson2.ui.fragments.users_fragment
+package com.example.poplib.mvp.presenter
 
-import com.example.poplib.lesson2.model.data.GithubUser
-import com.example.poplib.lesson2.model.data.GithubUsersRepo
-import com.example.poplib.lesson2.ui.recycler_users.IUserListPresenter
-import com.example.poplib.lesson2.ui.recycler_users.UserItemView
-import com.example.poplib.lesson2.ui.screens.AndroidScreens
+import com.example.poplib.mvp.model.entity.GithubUser
+import com.example.poplib.mvp.model.entity.GithubUsersRepo
+import com.example.poplib.mvp.view.UsersView
+import com.example.poplib.mvp.presenter.list.IUserListPresenter
+import com.example.poplib.mvp.presenter.list.UserItemView
+import com.example.poplib.navigation.Screens
 import com.github.terrakok.cicerone.Router
 import moxy.MvpPresenter
 
@@ -21,7 +22,6 @@ class UsersPresenter(val usersRepo: GithubUsersRepo, val router: Router) : MvpPr
     }
 
     val usersListPresenter = UsersListPresenter()
-    val AS = AndroidScreens()
 
     override fun onFirstViewAttach() {
         super.onFirstViewAttach()
@@ -29,7 +29,7 @@ class UsersPresenter(val usersRepo: GithubUsersRepo, val router: Router) : MvpPr
         loadData()
         usersListPresenter.itemClickListener = { itemView ->
             val user = usersListPresenter.users[itemView.pos]
-            router.navigateTo(AS.user(user))
+            router.navigateTo(Screens.getUserScreen(user))
         }
     }
     fun loadData() {

@@ -1,15 +1,17 @@
-package com.example.poplib.lesson2.ui.fragments.user_fragment
+package com.example.poplib.ui.fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import com.example.poplib.App
 import com.example.poplib.databinding.FragmentUserBinding
-import com.example.poplib.lesson2.model.data.GithubUser
+import com.example.poplib.mvp.model.entity.GithubUser
+import com.example.poplib.mvp.view.UserView
+import com.example.poplib.mvp.presenter.UserPresenter
 import moxy.MvpAppCompatFragment
 import moxy.ktx.moxyPresenter
 
-class UserFragment (user: GithubUser): MvpAppCompatFragment(), Contract.UserFragmentView {
+class UserFragment (user: GithubUser): MvpAppCompatFragment(), UserView{
     companion object {
         fun newInstance(user: GithubUser) = UserFragment(user)
     }

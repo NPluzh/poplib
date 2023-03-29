@@ -1,4 +1,4 @@
-package com.example.poplib.lesson2.ui.fragments
+package com.example.poplib
 
 interface BackButtonListener {
     fun backPressed(): Boolean

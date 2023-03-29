@@ -1,4 +1,4 @@
-package com.example.poplib.lesson2.model.data
+package com.example.poplib.mvp.model.entity
 
 import android.os.Parcelable
 import kotlinx.parcelize.Parcelize

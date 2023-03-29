@@ -1,4 +1,4 @@
-package com.example.poplib.lesson2.ui.fragments.users_fragment
+package com.example.poplib.ui.fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,9 +6,11 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.poplib.App
 import com.example.poplib.databinding.FragmentUsersBinding
-import com.example.poplib.lesson2.model.data.GithubUsersRepo
-import com.example.poplib.lesson2.ui.fragments.BackButtonListener
-import com.example.poplib.lesson2.ui.recycler_users.UsersRVAdapter
+import com.example.poplib.mvp.model.entity.GithubUsersRepo
+import com.example.poplib.mvp.presenter.UsersPresenter
+import com.example.poplib.mvp.view.UsersView
+import com.example.poplib.BackButtonListener
+import com.example.poplib.ui.adapter.UsersRVAdapter
 import moxy.MvpAppCompatFragment
 import moxy.ktx.moxyPresenter
 
