@@ -32,5 +32,9 @@ class UsersRVAdapter(val presenter: IUserListPresenter) : RecyclerView.Adapter<U
         override fun setLogin(text: String) = with(vb) {
             loginTextview.text = text
         }
+
+        override fun loadAvatar(url: String) {
+            //TODO("Not yet implemented")
+        }
     }
 }

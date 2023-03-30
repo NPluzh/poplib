@@ -4,13 +4,15 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.poplib.ApiHolder
 import com.example.poplib.App
 import com.example.poplib.databinding.FragmentUsersBinding
-import com.example.poplib.mvp.model.entity.GithubUsersRepo
 import com.example.poplib.mvp.presenter.UsersPresenter
 import com.example.poplib.mvp.view.UsersView
 import com.example.poplib.BackButtonListener
+import com.example.poplib.mvp.model.repo.retrofit.RetrofitGithubUsersRepo
 import com.example.poplib.ui.adapter.UsersRVAdapter
+import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import moxy.MvpAppCompatFragment
 import moxy.ktx.moxyPresenter
 
@@ -19,7 +21,7 @@ class UsersFragment : MvpAppCompatFragment(), UsersView, BackButtonListener {
         fun newInstance() = UsersFragment()
     }
     val presenter: UsersPresenter by moxyPresenter {
-        UsersPresenter(GithubUsersRepo(), App.instance.router) }
+        UsersPresenter(AndroidSchedulers.mainThread(), RetrofitGithubUsersRepo(ApiHolder().api), App.instance.router) }
     var adapter: UsersRVAdapter? = null
     private var vb: FragmentUsersBinding? = null
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
