@@ -10,8 +10,11 @@ import com.example.poplib.databinding.FragmentUsersBinding
 import com.example.poplib.mvp.presenter.UsersPresenter
 import com.example.poplib.mvp.view.UsersView
 import com.example.poplib.BackButtonListener
+import com.example.poplib.mvp.model.image.IImageLoader
 import com.example.poplib.mvp.model.repo.retrofit.RetrofitGithubUsersRepo
+import com.example.poplib.mvp.presenter.list.IUserListPresenter
 import com.example.poplib.ui.adapter.UsersRVAdapter
+import com.example.poplib.ui.image.GlideImageLoader
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import moxy.MvpAppCompatFragment
 import moxy.ktx.moxyPresenter
@@ -35,7 +38,7 @@ class UsersFragment : MvpAppCompatFragment(), UsersView, BackButtonListener {
     }
     override fun init() {
         vb?.rvUsers?.layoutManager = LinearLayoutManager(context)
-        adapter = UsersRVAdapter(presenter.usersListPresenter)
+        adapter = UsersRVAdapter( presenter.usersListPresenter, GlideImageLoader())
         vb?.rvUsers?.adapter = adapter
     }
     override fun updateList() {

@@ -2,12 +2,14 @@ package com.example.poplib.ui.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.poplib.databinding.ItemUserBinding
+import com.example.poplib.mvp.model.image.IImageLoader
 import com.example.poplib.mvp.presenter.list.IUserListPresenter
 import com.example.poplib.mvp.presenter.list.UserItemView
 
-class UsersRVAdapter(val presenter: IUserListPresenter) : RecyclerView.Adapter<UsersRVAdapter.ViewHolder>() {// Presenter передается, чтобы на view не замыкалась логика
+class UsersRVAdapter(val presenter: IUserListPresenter, val imageLoader: IImageLoader<ImageView>) : RecyclerView.Adapter<UsersRVAdapter.ViewHolder>() {// Presenter передается, чтобы на view не замыкалась логика
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) =
         ViewHolder(
@@ -33,8 +35,10 @@ class UsersRVAdapter(val presenter: IUserListPresenter) : RecyclerView.Adapter<U
             loginTextview.text = text
         }
 
-        override fun loadAvatar(url: String) {
-            //TODO("Not yet implemented")
+        override fun loadAvatar(url: String) {with(vb){
+           imageLoader.loadInto(url,avatarImage)
+        }
+
         }
     }
 }
