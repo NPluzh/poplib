@@ -2,16 +2,17 @@ package com.example.poplib.lesson1
 
 import android.os.Bundle
 import com.example.poplib.databinding.ActivityMainBinding
+import com.example.poplib.databinding.ActivityMainLesson1Binding
 import moxy.MvpAppCompatActivity
 import moxy.ktx.moxyPresenter
 
 class MainActivity : MvpAppCompatActivity(), Contract.MainView{
-    private lateinit var binding: ActivityMainBinding
+    private lateinit var binding: ActivityMainLesson1Binding
     private val presenter by moxyPresenter { PresenterImpl() }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityMainBinding.inflate(layoutInflater)
+        binding = ActivityMainLesson1Binding.inflate(layoutInflater)
         setContentView(binding.root)
         setOnClickListeners()
     }
