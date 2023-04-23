@@ -1,7 +1,7 @@
 package com.example.poplib.di.module
 
 import android.widget.ImageView
-import com.example.poplib.App
+import com.example.poplib.ui.App
 import com.example.poplib.mvp.model.cache.image.IImageCache
 import com.example.poplib.mvp.model.cache.image.room.RoomImageCache
 import com.example.poplib.mvp.model.entity.room.Database

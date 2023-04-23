@@ -1,4 +1,4 @@
-package com.example.poplib
+package com.example.poplib.ui
 
 import com.example.poplib.mvp.model.api.IDataSource
 import com.google.gson.FieldNamingPolicy

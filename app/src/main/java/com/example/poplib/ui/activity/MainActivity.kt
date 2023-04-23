@@ -1,8 +1,8 @@
 package com.example.poplib.ui.activity
 
 import android.os.Bundle
-import com.example.poplib.App
-import com.example.poplib.BackButtonListener
+import com.example.poplib.ui.App
+import com.example.poplib.ui.BackButtonListener
 import com.example.poplib.R
 import com.example.poplib.databinding.ActivityMainBinding
 import com.example.poplib.mvp.presenter.MainPresenter

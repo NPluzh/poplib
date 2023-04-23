@@ -4,8 +4,8 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.poplib.ApiHolder
-import com.example.poplib.App
+import com.example.poplib.ui.ApiHolder
+import com.example.poplib.ui.App
 import com.example.poplib.databinding.FragmentUserBinding
 import com.example.poplib.mvp.model.entity.GithubUser
 import com.example.poplib.mvp.model.repo.retrofit.RetrofitGithubRepositoriesRepo

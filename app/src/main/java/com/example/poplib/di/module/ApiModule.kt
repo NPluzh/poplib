@@ -1,6 +1,6 @@
 package com.example.poplib.di.module
 
-import com.example.poplib.App
+import com.example.poplib.ui.App
 import com.example.poplib.mvp.model.api.IDataSource
 import com.example.poplib.mvp.model.network.INetworkStatus
 import com.example.poplib.ui.network.AndroidNetworkStatus
